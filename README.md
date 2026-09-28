@@ -16,7 +16,7 @@ Everspace 2 only accepts keyboard input for these actions, so the analog feel co
 ## Setup
 
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/arygtm/everspace-spacemouse.git
 cd everspace-spacemouse
 python3 -m venv .venv
 source .venv/bin/activate
