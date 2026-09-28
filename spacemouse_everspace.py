@@ -25,13 +25,13 @@ key_map = {
 
 # Per-axis configuration: sensitivity, off/on thresholds, and duty cycle range for the analog zone
 AXIS_CONFIG = {
-    "x": {"sensitivity": 1.0, "off": 0.05, "on": 0.4, "duty_min": 0.1, "duty_max": 0.9},     # strafe
-    "y": {"sensitivity": 1.0, "off": 0.05, "on": 0.4, "duty_min": 0.1, "duty_max": 0.9},     # forward/back
-    "z": {"sensitivity": 1.0, "off": 0.05, "on": 0.4, "duty_min": 0.1, "duty_max": 0.9},     # up/down
-    "roll": {"sensitivity": 1.0, "off": 0.05, "on": 0.4, "duty_min": 0.1, "duty_max": 0.9},  # roll
+    "x": {"sensitivity": 1.0, "off": 0.05, "on": 0.45, "duty_min": 0.1, "duty_max": 0.9},     # strafe #0.4
+    "y": {"sensitivity": 1.0, "off": 0.05, "on": 0.45, "duty_min": 0.1, "duty_max": 0.9},     # forward/back
+    "z": {"sensitivity": 1.0, "off": 0.05, "on": 0.45, "duty_min": 0.1, "duty_max": 0.9},     # up/down
+    "roll": {"sensitivity": 1.0, "off": 0.05, "on": 0.45, "duty_min": 0.1, "duty_max": 0.9},  # roll
 }
 
-BOOST_THRESHOLD = 0.5
+BOOST_THRESHOLD = 0.5 #0.5
 
 ALPHA = 0.25
 
