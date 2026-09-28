@@ -6,18 +6,20 @@ Everspace 2 only accepts keyboard input for these actions, so the analog feel co
 
 > **Game version:** designed and tested for **Everspace 2**. It will likely work with the original Everspace after a few tweaks to the keybinds and tuning, but that hasn't been tested and isn't guaranteed.
 
+> **SpaceMouse model:** designed for the [SpaceMouse Enterprise](https://3dconnexion.com/us/product/spacemouse-enterprise/). Other SpaceMouse models will likely work with a few tweaks, mostly to the button mappings, since they have fewer or different buttons.
+
 ## Requirements
 
 - macOS (tested on macOS 15 with Python 3.14)
-- A 3Dconnexion SpaceMouse
+- A 3Dconnexion SpaceMouse (designed for the [SpaceMouse Enterprise](https://3dconnexion.com/us/product/spacemouse-enterprise/))
 - Python 3.9+
 - [hidapi](https://github.com/libusb/hidapi): `brew install hidapi`
 
 ## Setup
 
 ```bash
-git clone https://github.com/arygtm/everspace-spacemouse.git
-cd everspace-spacemouse
+git clone https://github.com/arygtm/everspace2-spacemouse.git
+cd everspace2-spacemouse
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -32,6 +34,7 @@ If the 3Dconnexion driver (3DxWare) is running, it may take over the device. Qui
 ## Usage
 
 ```bash
+cd everspace2-spacemouse
 source .venv/bin/activate
 python spacemouse_everspace.py
 ```
@@ -49,7 +52,7 @@ Set these keybinds in Everspace 2 (or edit `key_map` in the script to match your
 | Lift up / press down | `W` / `S` | Move up / down |
 | Twist (roll) left / right | `Q` / `E` | Roll left / right |
 | Strong push in any direction | `U` | Boost |
-| Buttons 1–10 | `F1`–`F10` | Bind to whatever you like |
+| Buttons 1–10 | `F1`–`F10` | Bind to whatever you like (I run devices in F1-F4 and consumables in F7-F10) |
 | MENU button | `P` | |
 | ESC button | `Esc` | Pause menu |
 
