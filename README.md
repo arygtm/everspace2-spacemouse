@@ -12,7 +12,11 @@ Everspace 2 only accepts keyboard input for these actions, so the analog feel co
 
 The top-right corner shows the SpaceMouse (left hand) and regular mouse (right hand) inputs.
 
-<!-- Demo video goes here -->
+
+
+https://github.com/user-attachments/assets/57e9e80a-e343-4658-ba87-8a82415aa8d4
+
+
 
 ## Requirements
 
