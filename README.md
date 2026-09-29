@@ -8,6 +8,12 @@ Everspace 2 only accepts keyboard input for these actions, so the analog feel co
 
 > **SpaceMouse model:** designed for the [SpaceMouse Enterprise](https://3dconnexion.com/us/product/spacemouse-enterprise/). Other SpaceMouse models will likely work with a few tweaks, mostly to the button mappings, since they have fewer or different buttons.
 
+## Demo: Racing in Prescott Starbase
+
+The top-right corner shows the SpaceMouse (left hand) and regular mouse (right hand) inputs.
+
+<!-- Demo video goes here -->
+
 ## Requirements
 
 - macOS (tested on macOS 15 with Python 3.14)
