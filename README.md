@@ -2,7 +2,12 @@
 
 Fly in [Everspace 2](https://everspace.game/) with a 3Dconnexion SpaceMouse. The script reads the SpaceMouse's axes and buttons and turns them into keyboard presses the game understands.
 
-Everspace 2 only accepts keyboard input for these actions, so the analog feel comes from *duty cycling*: a small push on the SpaceMouse taps a key rapidly for short bursts, and a bigger push holds it down longer. Past a threshold the key is simply held.
+The SpaceMouse is a 6DOF input device that can be moved linearly along XYZ, and rotated about yaw+pitch+roll. This script maps your ships linear movement, boost, and roll onto the SpaceMouse while keeping yaw and pitch on the mouse.
+
+<img width="1206" height="1327" alt="SpaceMouseEnterpriseOverview" src="https://github.com/user-attachments/assets/87ead929-05a2-41fe-a32c-a15187ec4803" />
+
+
+Everspace 2 only accepts keyboard input for these actions, so the analog feel comes from *duty cycling*: a small push on the SpaceMouse taps a key rapidly for short bursts, and a bigger push holds it down longer. Past a threshold the key is simply held and past the larger boost threshold, you will begin boosting in the direction the SpaceMouse is held.
 
 > **Game version:** designed and tested for **Everspace 2**. It will likely work with the original Everspace after a few tweaks to the keybinds and tuning, but that hasn't been tested and isn't guaranteed.
 
