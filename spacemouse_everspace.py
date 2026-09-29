@@ -9,8 +9,12 @@ import pyspacemouse
 from pyspacemouse.types import ButtonSpec, DeviceInfo, ButtonState
 from pynput.keyboard import Controller, Key
 
-keyboard = Controller()
+# =============================================================================
+# USER SETTINGS
+# Change these to match your Everspace 2 keybinds and how you like the controls to feel.
+# =============================================================================
 
+# Keys sent for each movement action. Must match your in-game keybinds.
 key_map = {
     "forward": "z",
     "backward": "x",
@@ -23,7 +27,17 @@ key_map = {
     "boost": "u"
 }
 
-# Per-axis configuration: sensitivity, off/on thresholds, and duty cycle range for the analog zone
+# Device buttons 1-10 send F1-F10; MENU and ESC are mapped below.
+# Other SpaceMouse models have fewer or different buttons, so adjust these to match yours.
+FUNC_KEYS = [Key.f1, Key.f2, Key.f3, Key.f4, Key.f5, Key.f6, Key.f7, Key.f8, Key.f9, Key.f10]
+NAMED_BUTTON_KEYS = {"MENU": "p", "ESC": Key.esc}
+
+# Per-axis feel:
+#   sensitivity:         scales the input after the response curve
+#   off:                 inputs below this are ignored (dead zone)
+#   on:                  inputs above this hold the key down fully
+#   duty_min / duty_max: fraction of each cycle the key is held between off and on,
+#                        from gentlest to strongest push
 AXIS_CONFIG = {
     "x": {"sensitivity": 1.0, "off": 0.05, "on": 0.45, "duty_min": 0.1, "duty_max": 0.9},     # strafe
     "y": {"sensitivity": 1.0, "off": 0.05, "on": 0.45, "duty_min": 0.1, "duty_max": 0.9},     # forward/back
@@ -31,16 +45,27 @@ AXIS_CONFIG = {
     "roll": {"sensitivity": 1.0, "off": 0.05, "on": 0.45, "duty_min": 0.1, "duty_max": 0.9},  # roll
 }
 
+# How hard you have to push (combined across strafe, forward/back and up/down) to trigger boost
 BOOST_THRESHOLD = 0.5
 
+# =============================================================================
+# ADVANCED SETTINGS
+# Not recommended to change. These are tuned to work well with Everspace 2's input handling.
+# =============================================================================
+
+# Input smoothing (0-1). Lower is smoother but laggier; higher is more responsive but jittery.
 ALPHA = 0.25
 
-# Analog duty cycle parameters
-CYCLE_FREQ = 50  # Hz: fixed frequency for duty cycle
+# Duty cycles per second (Hz). Too high and short taps can be missed by the game;
+# too low and gentle inputs feel stuttery instead of smooth.
+CYCLE_FREQ = 50
 
-# Device buttons 1-10 send F1-F10; MENU and ESC are mapped below
-FUNC_KEYS = [Key.f1, Key.f2, Key.f3, Key.f4, Key.f5, Key.f6, Key.f7, Key.f8, Key.f9, Key.f10]
-NAMED_BUTTON_KEYS = {"MENU": "p", "ESC": Key.esc}
+# Minimum time (seconds) a button's key stays held, so quick taps still register in-game
+MIN_BUTTON_ON_TIME = 0.1
+
+# =============================================================================
+
+keyboard = Controller()
 
 # Track key states
 keys = {key: False for key in key_map.values()}
@@ -50,7 +75,6 @@ last_press_time = {key: 0 for key in key_map.values() if key != key_map["boost"]
 
 # Track (press time, key) per held button for minimum on-time
 button_press_times = {}
-MIN_BUTTON_ON_TIME = 0.1  # seconds
 
 # Map axis to (positive_key, negative_key)
 KEY_MAP = {
